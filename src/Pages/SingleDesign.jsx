@@ -1,4 +1,4 @@
-import { useGetDesignByIdQuery } from '../API/Store/apiSlice.js';
+import { useGetDesignByIdQuery } from '../API/Store/queries/products/products.query.js';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 

@@ -1,4 +1,4 @@
-import { useGetProductsQuery } from '../../API/Store/apiSlice.js';
+import { useGetProductsQuery } from '../../API/Store/queries/products/products.query.js';
 
 const DesignList = () => {
   const { data: designs, error, isLoading } = useGetProductsQuery();
@@ -19,7 +19,7 @@ const DesignList = () => {
 
 export default DesignList;
 //
-// import { useGetProductsQuery } from '../../API/Store/apiSlice.js';
+// import { useGetProductsQuery } from '../../API/Store/products.query.js';
 // import DesignElement from '../moleculs/designElement.jsx';
 //
 // const DesignList = () => {

@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { apiSlice } from './apiSlice.js';
+import { apiSlice } from './products.query.js';
 
-export const store = configureStore({
+export const productsBaseQuery = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
