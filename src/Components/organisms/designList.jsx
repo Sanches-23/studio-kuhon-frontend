@@ -1,5 +1,4 @@
-import { useGetProductsQuery } from '../../API/Store/queries/products/products.base.query.js';
-// import { useGetProductsQuery } from '../../API/Store/queries/products/products.query.js';
+import { useGetProductsQuery } from '../../API/Store/queries/products/products.query.js';
 
 const DesignList = () => {
   const { data: designs, error, isLoading } = useGetProductsQuery();
