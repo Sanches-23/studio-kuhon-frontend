@@ -1,40 +1,16 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://fakestoreapi.com' }),
-  endpoints: (builder) => ({
-    getProducts: builder.query({
-      query: () => 'products',
-      providesTags: ['Products'],
-    }),
-    getProductById: builder.query({
-      query: (id) => `/products/${id}`,
-      providesTags: ['Products'],
-    }),
-  }),
-});
-
-export const {
-  useGetProductsQuery,
-  useGetProductByIdQuery: useGetDesignByIdQuery,
-} = apiSlice;
-
-// import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
+// import { createApi } from '@reduxjs/toolkit/query';
+// import { productsBaseQuery } from './products.base.query.js';
+// import { createGetProductsEndpoint } from './endpoints/createGetProductsEndpoint.js';
+// import { createGetProductByIdEndpoint } from './endpoints/createGetProductByIdEndpoint.js';
 //
-// export const productsApi = createApi({
+// export const productsQuery = createApi({
 //   reducerPath: 'productsApi',
-//   baseQuery: fetchBaseQuery({ baseUrl: '/api/products' }),
-//   endpoints: (builder) => ({
-//     getProducts: builder.query({
-//       query: () => '',
-//       providesTags: ['Products'],
-//     }),
-//     getProductById: builder.query({
-//       query: (id) => `/${id}`,
-//       providesTags: (result, error, id) => [{ type: 'Product', id }],
-//     }),
+//   baseQuery: productsBaseQuery,
+//   tagTypes: ['Products'],
+//   endpoints: (build) => ({
+//     getProducts: createGetProductsEndpoint(build),
+//     getProductById: createGetProductByIdEndpoint(build),
 //   }),
 // });
 //
-// export const { useGetProductsQuery, useGetProductByIdQuery } = productsApi;
+// export const { useGetProductsQuery, useGetProductByIdQuery } = productsQuery;
