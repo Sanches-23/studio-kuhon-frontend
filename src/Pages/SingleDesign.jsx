@@ -1,4 +1,4 @@
-import { useGetDesignByIdQuery } from '../API/Store/queries/products/products.query.js';
+import { useGetProductByIdQuery } from '../API/Store/queries/products/products.query.js';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 
@@ -9,7 +9,7 @@ const SingleDesign = () => {
     error,
     isLoading,
     refetch,
-  } = useGetDesignByIdQuery(designId, {
+  } = useGetProductByIdQuery(designId, {
     skip: !designId,
   });
 

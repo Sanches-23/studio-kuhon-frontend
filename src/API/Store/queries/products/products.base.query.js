@@ -1,10 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { apiSlice } from './products.query.js';
+import { fetchBaseQuery } from '@reduxjs/toolkit/query';
 
-export const productsBaseQuery = configureStore({
-  reducer: {
-    [apiSlice.reducerPath]: apiSlice.reducer,
-  },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(apiSlice.middleware),
+export const productsBaseQuery = fetchBaseQuery({
+  baseUrl: 'https://fakestoreapi.com',
 });
