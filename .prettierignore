@@ -1,0 +1,10 @@
+node_modules
+#build
+*.log
+
+# custom routs
+vite.config.ts
+eslint.config.mjs
+
+#src/App.tsx
+#src/Hooks/customHook.jsx

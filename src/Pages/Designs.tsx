@@ -1,7 +1,8 @@
-import DesignList from '../Components/organisms/designList.jsx';
+import DesignList from '../Components/organisms/designList.js';
+import React from 'react';
 // import { Suspense } from 'react';
 
-const SingleDesign = () => {
+const Designs: React.FC = () => {
   return (
     <>
       {/*<Suspense fallback={<p>Loading...</p>}>*/}
@@ -11,4 +12,4 @@ const SingleDesign = () => {
   );
 };
 
-export default SingleDesign;
+export default Designs;
