@@ -1,8 +1,8 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import Designs from '../Pages/Designs.jsx';
-import SingleDesign from '../Pages/SingleDesign.jsx';
-import App from '../App.jsx';
-import NotFound from '../Pages/NotFound.jsx';
+import Designs from '../Pages/Designs.js';
+import SingleDesign from '../Pages/SingleDesign.js';
+import App from '../App.js';
+import NotFound from '../Pages/NotFound';
 
 // const basename = '/';
 
