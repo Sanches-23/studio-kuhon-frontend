@@ -2,9 +2,9 @@ import React from 'react';
 
 const NotFound: React.FC = () => {
   return (
-    <div>
+    <>
       <h1>ОГООО!</h1>
-    </div>
+    </>
   );
 };
 
