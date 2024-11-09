@@ -27,23 +27,23 @@ const Navbar: React.FC = () => {
             gap: '50px',
           }}
         >
-          <SvgIcon svg={StudioKuhon} sx={{ height: 40, marginRight: 2 }} />
+          <SvgIcon svg={StudioKuhon} sx={{ height: 40 }} />
           <Box sx={{ display: 'flex', gap: '50px' }}>
-            <StyledLink to="/home" underline="hover">
+            <StyledLink to="/home" type="navbar">
               Головна
             </StyledLink>
-            <StyledLink to="/products" underline="hover">
+            <StyledLink to="/products" type="navbar">
               Дизайни
             </StyledLink>
-            <StyledLink to="/furniture" underline="hover">
+            <StyledLink to="/furniture" type="navbar">
               Меблі
             </StyledLink>
-            <StyledLink to="/about" underline="hover">
+            <StyledLink to="/about" type="navbar">
               Про нас
             </StyledLink>
           </Box>
         </Box>
-        <StyledLink to="/order" underline="hover" sx={{ marginLeft: 2, color: '#C00021' }}>
+        <StyledLink to="/order" type="navbar" sx={{ color: '#C00021' }}>
           Замовлення
         </StyledLink>
       </Toolbar>

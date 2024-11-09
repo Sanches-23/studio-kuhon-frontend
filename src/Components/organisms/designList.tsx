@@ -1,7 +1,7 @@
 import { useGetProductsQuery } from '../../API/Store/queries/products/products.query';
 import { Product } from '../../API/Store/queries/products/types/Product';
 import React from 'react';
-import { CustomTypography } from '../atoms/CustomTypography';
+import { StyledTypography } from '../atoms/Typography/StyledTypography';
 
 const DesignList: React.FC = () => {
   const { data: designs, error, isLoading } = useGetProductsQuery();
@@ -19,7 +19,10 @@ const DesignList: React.FC = () => {
     <div>
       {designs.map((design: Product) => (
         <div key={design.id}>
-          <CustomTypography variant={'h2'} text={design.title} />
+          <StyledTypography
+            type={'heading'}
+            text={design.title}
+          ></StyledTypography>
         </div>
       ))}
     </div>

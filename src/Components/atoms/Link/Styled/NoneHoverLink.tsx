@@ -8,6 +8,6 @@ export const NoneHoverLink = styled(BasicLink)(({ theme }) => ({
   fontWeight: theme.typography.body2.fontWeight,
   textDecoration: 'none',
   '&:hover': {
-    // color: theme.palette.text.secondary,
+    textDecoration: 'none',
   },
 }));

@@ -3,10 +3,12 @@ import { styled } from '@mui/material';
 
 export const BasicLink = styled(RouterLink)(({ theme }) => ({
   textDecoration: 'none',
-  fontWeight: 500,
-  color: theme.palette.text.primary,
-  fontSize: theme.typography.body1.fontSize,
+  fontFamily: theme.typography.fontFamily,
+  // textDecorationThickness: '2px' /*чомусь не спрацьовує*/,
   '&.MuiLink-root': {
     cursor: 'pointer',
+  },
+  '&:hover': {
+    textDecoration: 'underline',
   },
 }));
