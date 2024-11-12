@@ -30,6 +30,7 @@ const theme = createTheme({
     },
     background: {
       default: '#ffffff',
+      paper: '#FF6700',
     },
     text: {
       primary: '#232323',
@@ -65,10 +66,10 @@ const theme = createTheme({
       lineHeight: '38px',
     },
     caption: {
-      fontSize: '12px',
+      fontSize: '24px',
       fontWeight: 400,
-      lineHeight: '14px',
-      color: '#09090B',
+      lineHeight: '34px',
+      color: '#232323BF',
     },
     // overline: {
     //   fontSize: '10px',

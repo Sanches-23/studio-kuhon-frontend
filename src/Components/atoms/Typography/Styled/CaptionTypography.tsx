@@ -3,6 +3,6 @@ import { BasicTypography } from './BasicTypography';
 
 export const CaptionTypography = styled(BasicTypography)(({ theme }) => ({
   fontSize: theme.typography.caption.fontSize,
-  lineHeight: theme.typography.h1.lineHeight,
-  color: theme.palette.text.primary /**/,
+  lineHeight: theme.typography.caption.lineHeight,
+  color: theme.typography.caption.color,
 }));

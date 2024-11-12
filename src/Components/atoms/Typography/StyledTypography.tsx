@@ -3,6 +3,7 @@ import { SxProps } from '@mui/material';
 import { HeadingTypography } from './Styled/HeadingTypography';
 import { CaptionTypography } from './Styled/CaptionTypography';
 import { ParagraphTypography } from './Styled/ParagraphTypography';
+import { BasicTypography } from './Styled/BasicTypography';
 
 type TypographyProps = {
   type?: 'heading' | 'paragraph' | 'caption';
@@ -23,8 +24,9 @@ export const StyledTypography: React.FC<TypographyProps> = ({
       case 'caption':
         return CaptionTypography;
       case 'paragraph':
-      default:
         return ParagraphTypography;
+      default:
+        return BasicTypography;
     }
   }, [type]);
 
