@@ -13,7 +13,6 @@ const Navbar: React.FC = () => {
       <Toolbar
         disableGutters
         sx={{
-          maxWidth: 1440,
           margin: '0 auto',
           width: '100%',
           padding: '25px 135px',

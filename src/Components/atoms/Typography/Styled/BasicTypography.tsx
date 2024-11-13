@@ -5,6 +5,6 @@ export const BasicTypography = styled(Typography)(({ theme }) => ({
   fontWeight: theme.typography.body1.fontWeight,
   lineHeight: theme.typography.body1.lineHeight,
   // lineHeight: '1',
-  color: theme.palette.text.primary /**/,
+  color: theme.palette.text.primary,
   textDecoration: 'none',
 }));

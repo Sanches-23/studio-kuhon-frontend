@@ -1,132 +1,7 @@
-// // import React, { useRef } from 'react';
-// // import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
-// // import { Navigation, Pagination, FreeMode, Autoplay } from 'swiper/modules';
-// // import 'swiper/css';
-// // import 'swiper/css/navigation';
-// // import 'swiper/css/pagination';
-// // import 'swiper/css/free-mode';
-// // import 'swiper/css/autoplay';
-// // import { SliderItem } from './SliderItem';
-// // import { SliderNavigation } from './SliderNavigation';
-// // import { SliderProgress } from './SliderProgress';
-// // import { Box } from '@mui/material';
-// //
-// // type SliderContainerProps = {
-// //   items: React.ReactNode[];
-// //   slidesPerView?: number;
-// //   autoplay?: boolean;
-// //   loop?: boolean;
-// //   navigation?: boolean;
-// //   progress?: boolean;
-// // };
-// //
-// // export const SliderContainer1: React.FC<SliderContainerProps> = ({
-// //   items,
-// //   slidesPerView = 3,
-// //   autoplay = true,
-// //   loop = true,
-// //   navigation = true,
-// //   progress = true,
-// // }) => {
-// //   const swiperRef = useRef<SwiperRef | null>(null);
-// //
-// //   return (
-// //     <Box sx={{ position: 'relative' }}>
-// //       <Swiper
-// //         ref={swiperRef}
-// //         modules={[Navigation, Pagination, FreeMode, Autoplay]}
-// //         spaceBetween={10}
-// //         slidesPerView={slidesPerView}
-// //         freeMode={true}
-// //         loop={loop}
-// //         autoplay={
-// //           autoplay ? { delay: 3000, disableOnInteraction: false } : false
-// //         }
-// //         pagination={{ clickable: true, hideOnClick: true }}
-// //         onSwiper={(swiper) => {
-// //           if (swiperRef.current) {
-// //             swiperRef.current.swiper = swiper;
-// //           }
-// //         }}
-// //         style={{ paddingBottom: '40px' }}
-// //       >
-// //         {items.map((item, index) => (
-// //           <SwiperSlide key={index}>
-// //             <SliderItem>{item}</SliderItem>
-// //           </SwiperSlide>
-// //         ))}
-// //       </Swiper>
-// //       {navigation && <SliderNavigation swiperRef={swiperRef} />}
-// //       {progress && <SliderProgress swiperRef={swiperRef} />}
-// //     </Box>
-// //   );
-// // };
-//
-// import React, { useRef } from 'react';
-// import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
-// import { Navigation, FreeMode, Autoplay } from 'swiper/modules';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/free-mode';
-// import 'swiper/css/autoplay';
-// import { SliderItem } from './SliderItem';
-// import { SliderNavigation } from './SliderNavigation';
-// import { SliderProgress } from './SliderProgress';
-// import { Box } from '@mui/material';
-//
-// type SliderContainerProps = {
-//   items: React.ReactNode[];
-//   slidesPerView?: number;
-//   autoplay?: boolean;
-//   loop?: boolean;
-//   navigation?: boolean;
-//   progress?: boolean;
-// };
-//
-// export const SliderContainer1: React.FC<SliderContainerProps> = ({
-//   items,
-//   slidesPerView = 3,
-//   autoplay = true,
-//   loop = true,
-//   navigation = true,
-//   progress = true,
-// }) => {
-//   const swiperRef = useRef<SwiperRef | null>(null);
-//
-//   return (
-//     <Box sx={{ position: 'relative' }}>
-//       <Swiper
-//         ref={swiperRef}
-//         modules={[Navigation, FreeMode, Autoplay]}
-//         spaceBetween={10}
-//         slidesPerView={slidesPerView}
-//         freeMode={true}
-//         loop={loop}
-//         autoplay={
-//           autoplay ? { delay: 3000, disableOnInteraction: false } : false
-//         }
-//         onSwiper={(swiper) => {
-//           if (swiperRef.current) {
-//             swiperRef.current.swiper = swiper;
-//           }
-//         }}
-//         style={{ paddingBottom: '40px' }}
-//       >
-//         {items.map((item, index) => (
-//           <SwiperSlide key={index}>
-//             <SliderItem>{item}</SliderItem>
-//           </SwiperSlide>
-//         ))}
-//       </Swiper>
-//       {navigation && <SliderNavigation swiperRef={swiperRef} />}
-//       {progress && <SliderProgress swiperRef={swiperRef} />}
-//     </Box>
-//   );
-// };
-
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
 import { Navigation, FreeMode, Autoplay } from 'swiper/modules';
+import 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
@@ -136,10 +11,10 @@ import { SliderNavigation } from './SliderNavigation';
 import { SliderProgress } from './SliderProgress';
 import { Box } from '@mui/material';
 import { StyledTypography } from '../../Components/atoms/Typography/StyledTypography';
+import theme from '../../Utils/theme';
 
 type SliderContainerProps = {
   items: React.ReactNode[];
-  // slidesPerView?: number;
   autoplay?: boolean;
   loop?: boolean;
   navigation?: boolean;
@@ -148,7 +23,6 @@ type SliderContainerProps = {
 
 export const SliderContainer: React.FC<SliderContainerProps> = ({
   items,
-  // slidesPerView = 3,
   autoplay = true,
   loop = true,
   navigation = true,
@@ -157,49 +31,56 @@ export const SliderContainer: React.FC<SliderContainerProps> = ({
   const swiperRef = useRef<SwiperRef | null>(null);
 
   return (
-    <Box sx={{ position: 'relative', backgroundColor: 'red' }}>
+    <Box
+      sx={{
+        position: 'relative',
+        margin: '0 auto',
+      }}
+    >
       <StyledTypography
         type={'heading'}
         text={'ВІДГУКИ НАШИХ КЛІЄНТІВ'}
-        sx={{ color: 'white' }}
+        sx={{
+          padding: '60px 135px 100px',
+          color: theme.palette.background.default,
+        }}
       />
       <Swiper
         ref={swiperRef}
         modules={[Navigation, FreeMode, Autoplay]}
         spaceBetween={30}
-        // slidesPerView={slidesPerView}
         slidesPerView={'auto'}
-        freeMode={true}
+        freeMode
+        // centeredSlides={false}
         loop={loop}
         autoplay={
-          autoplay ? { delay: 30000, disableOnInteraction: false } : false
+          autoplay ? { delay: 3000, disableOnInteraction: false } : undefined
         }
-        onSwiper={(swiper) => {
-          if (swiperRef.current) {
-            swiperRef.current.swiper = swiper;
-          }
-        }}
-        // style={{ paddingBottom: '40px' }}
+        style={{ paddingLeft: '135px' }}
       >
         {items.map((item, index) => (
           <SwiperSlide
             key={index}
             style={{
-              minWidth: '300px',
-              maxWidth: '600px',
-              width: 'fit-content',
-              boxSizing: 'border-box',
-              height: '400px',
-              borderRadius: '32px',
-              backgroundColor: 'black',
+              width: 'auto',
             }}
           >
             <SliderItem>{item}</SliderItem>
           </SwiperSlide>
         ))}
       </Swiper>
-      {navigation && <SliderNavigation swiperRef={swiperRef} />}
-      {progress && <SliderProgress swiperRef={swiperRef} />}
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '13px',
+          padding: '75px 135px 90px',
+        }}
+      >
+        {progress && <SliderProgress swiperRef={swiperRef} />}
+        {navigation && <SliderNavigation swiperRef={swiperRef} />}
+      </Box>
     </Box>
   );
 };

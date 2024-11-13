@@ -19,9 +19,6 @@ export default defineConfig({
       '@': '/src', // Приклад аліасу
     },
   },
-  optimizeDeps: {
-    include: ['swiper', 'swiper/react', 'swiper/modules'],
-  },
   json: {
     namedExports: true,
     stringify: false,

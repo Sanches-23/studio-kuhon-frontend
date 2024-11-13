@@ -1,10 +1,8 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import { SliderContainer } from '../sliderAPI/ReviewSlider';
 import reviewsData from '../sliderAPI/ReviewSlider/reviews.json';
 import { StyledTypography } from '../Components/atoms/Typography/StyledTypography';
-// import TestimonialsSlider from '../sliderAPI/TestimonialsSlider';
-// import { TestSlider2 } from '../sliderAPI/TestSlider2';
 
 type Review = {
   id: number;
@@ -14,42 +12,56 @@ type Review = {
 };
 
 const Home: React.FC = () => {
-  const reviews: Review[] = reviewsData;
-  const items = reviews.map((review) => (
-    <Box
-      key={review.id}
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-      }}
-    >
-      <StyledTypography type={'caption'} text={review.text}></StyledTypography>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+  const theme = useTheme();
+  const items = reviewsData.map((review: Review) => {
+    const textLength = review.text.length;
+    const containerWidth = Math.min(70 + textLength * 2, 1000);
+    return (
+      <Box
+        key={review.id}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          width: `${containerWidth}px`,
+        }}
+      >
         <StyledTypography
           type={'caption'}
-          text={review.name}
+          text={review.text}
         ></StyledTypography>
-        <StyledTypography
-          text={review.city}
-          sx={{ fontSize: '16px', color: '#23232380' }}
-        ></StyledTypography>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <StyledTypography
+            type={'caption'}
+            text={review.name}
+          ></StyledTypography>
+          <StyledTypography
+            text={review.city}
+            sx={{ fontSize: '16px', color: '#23232380' }}
+          ></StyledTypography>
+        </Box>
       </Box>
-    </Box>
-  ));
+    );
+  });
 
   return (
     <Box
       sx={{
-        maxWidth: 1440,
+        width: '100%',
         margin: '0 auto',
+        backgroundColor: theme.palette.background.default,
       }}
     >
-      <Typography variant="h1">Home</Typography> {/*ПОМІНЯЙ НА КАСТОМНЕ */}
-      {/*<TestimonialsSlider />*/}
-      {/*<TestSlider2 />*/}
-      {/*<SliderContainer items={items} slidesPerView={3} />*/}
-      <SliderContainer items={items} />
+      <Box
+        sx={{
+          backgroundColor: 'lightgray',
+        }}
+      >
+        AAAAAAAAAAAAA
+      </Box>
+      <Box sx={{ backgroundColor: theme.palette.primary.main }}>
+        <SliderContainer items={items} />
+      </Box>
     </Box>
   );
 };

@@ -10,8 +10,8 @@ const Footer: React.FC = () => {
     <Box component="footer" sx={{ backgroundColor: '#1F1F1F' }}>
       <Box
         sx={{
-          maxWidth: 1440,
-          width: '100%',
+          // maxWidth: 1440,
+          // width: '100%',
           color: '#FFFFFF',
           padding: '90px 135px 106px',
           display: 'flex',
