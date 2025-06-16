@@ -4,10 +4,12 @@ import { SwiperRef } from 'swiper/react';
 
 type SliderProgressProps = {
   swiperRef: React.RefObject<SwiperRef | null>;
+  type: 'projects' | 'reviews';
 };
 
 export const SliderProgress: React.FC<SliderProgressProps> = ({
   swiperRef,
+  type,
 }) => {
   const [progress, setProgress] = useState(0);
   const theme = useTheme();
@@ -16,7 +18,10 @@ export const SliderProgress: React.FC<SliderProgressProps> = ({
     const swiper = swiperRef.current?.swiper;
     if (swiper) {
       swiper.on('slideChange', () => {
-        setProgress((swiper.realIndex / (swiper.slides.length - 1)) * 100);
+        // setProgress((swiper.realIndex / (swiper.slides.length - 1)) * 100);
+        const totalSlides = swiper.slides.length;
+        const currentIndex = swiper.realIndex + 1;
+        setProgress((currentIndex / totalSlides) * 100);
       });
     }
   }, [swiperRef]);
@@ -24,7 +29,10 @@ export const SliderProgress: React.FC<SliderProgressProps> = ({
   return (
     <Box
       sx={{
-        width: '100%',
+        // width: '100%',
+        width: '100vw',
+        // width: 'auto',
+        // maxWidth: '100vw',
       }}
     >
       <LinearProgress
@@ -32,10 +40,14 @@ export const SliderProgress: React.FC<SliderProgressProps> = ({
         value={progress}
         sx={{
           height: '6px',
-          borderRadius: '2px',
-          backgroundColor: '#FFFFFF3A',
+          // borderRadius: '2px',
+          // backgroundColor: '#FFFFFF3A',
+          backgroundColor: type === 'reviews' ? '#FFFFFF3A' : '#735C5D1A',
           '& .MuiLinearProgress-bar': {
-            backgroundColor: theme.palette.background.default,
+            backgroundColor:
+              type === 'reviews'
+                ? theme.palette.background.default
+                : theme.palette.primary.main,
           },
         }}
       />

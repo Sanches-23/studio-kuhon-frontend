@@ -58,10 +58,10 @@ const theme = createTheme({
     body1: {
       fontSize: '20px',
       fontWeight: 400,
-      lineHeight: '25px',
+      lineHeight: '50px',
     },
     body2: {
-      fontSize: '30px',
+      fontSize: '20px',
       fontWeight: 400,
       lineHeight: '38px',
     },
@@ -101,7 +101,7 @@ const theme = createTheme({
           src: url(${MullerNextWideTrialThin}) format('opentype');
           font-weight: 200;
           font-style: normal;
-        }        
+        }
         @font-face {
           font-family: 'Muller Next Wide Trial';
           src: url(${MullerNextWideTrialRegular}) format('opentype');
@@ -123,6 +123,43 @@ const theme = createTheme({
       `,
     },
   },
+  // components: {
+  //   MuiCssBaseline: {
+  //     styleOverrides: {
+  //       '@font-face': [
+  //         {
+  //           fontFamily: 'Muller Next Wide Trial',
+  //           src: `url(${MullerNextWideTrialThin}) format('opentype')`,
+  //           fontWeight: 200,
+  //           fontStyle: 'normal',
+  //         },
+  //         {
+  //           fontFamily: 'Muller Next Wide Trial',
+  //           src: `url(${MullerNextWideTrialRegular}) format('opentype')`,
+  //           fontWeight: 400,
+  //           fontStyle: 'normal',
+  //         },
+  //         {
+  //           fontFamily: 'Muller Next Wide Trial',
+  //           src: `url(${MullerNextWideTrialExtraBold}) format('opentype')`,
+  //           fontWeight: 600,
+  //           fontStyle: 'normal',
+  //         },
+  //         {
+  //           fontFamily: 'Muller Next Wide Trial',
+  //           src: `url(${MullerNextWideTrialHeavy}) format('opentype')`,
+  //           fontWeight: 750,
+  //           fontStyle: 'normal',
+  //         },
+  //       ],
+  //       body: {
+  //         margin: 0,
+  //         padding: '0 16px',
+  //         // boxSizing: 'border-box',
+  //       },
+  //     },
+  //   },
+  // },
 });
 
 export default theme;

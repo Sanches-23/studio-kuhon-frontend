@@ -10,10 +10,8 @@ const Footer: React.FC = () => {
     <Box component="footer" sx={{ backgroundColor: '#1F1F1F' }}>
       <Box
         sx={{
-          // maxWidth: 1440,
-          // width: '100%',
           color: '#FFFFFF',
-          padding: '90px 135px 106px',
+          padding: { xs: '40px 20px 20px', md: '90px 135px 106px' },
           display: 'flex',
           flexDirection: 'column',
           margin: '0 auto',
@@ -21,36 +19,50 @@ const Footer: React.FC = () => {
       >
         <SvgIcon
           svg={StudioKuhon2}
-          sx={{ height: 100, marginBottom: '60px' }}
+          sx={{
+            height: { xs: 50, md: 100 },
+            marginBottom: { xs: '20px', md: '60px' },
+          }}
         />
 
         <Box
           sx={{
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: { xs: 'column', md: 'row' },
+            gap: { xs: '20px', md: '0' },
             justifyContent: 'space-between',
-            marginTop: '60px 135px 106px',
+            marginTop: { xs: '0', md: '60px 135px 106px' },
+            alignItems: { xs: 'center', md: 'flex-start' },
           }}
         >
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: { xs: '10px', md: '32px' },
+            }}
+          >
             <StyledLink to="/products" type="footer" sx={{ color: 'white' }}>
               Дизайни
             </StyledLink>
-            <StyledLink to="/products" type="footer" sx={{ color: 'white' }}>
+            <StyledLink to="/furniture" type="footer" sx={{ color: 'white' }}>
               Меблі
             </StyledLink>
-            <StyledLink to="/products" type="footer" sx={{ color: 'white' }}>
+            <StyledLink to="/about" type="footer" sx={{ color: 'white' }}>
               Про нас
             </StyledLink>
-            <StyledLink to="/products" type="footer" sx={{ color: 'white' }}>
+            <StyledLink to="/#" type="footer" sx={{ color: 'white' }}>
               Зв&#39;язатись
             </StyledLink>
           </Box>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            <StyledTypography
-              text={'Контакти'}
-              sx={{ fontWeight: '600', color: 'white', fontSize: '30px' }}
-            />
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: { xs: '10px', md: '32px' },
+            }}
+          >
+            <StyledTypography text={'Контакти'} sx={{ color: 'white' }} />
             <StyledLink to="#" type="footer" sx={{ color: 'white' }}>
               Viber
             </StyledLink>
@@ -65,31 +77,38 @@ const Footer: React.FC = () => {
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '32px',
-              alignSelf: 'flex-end',
+              gap: { xs: '10px', md: '32px' },
+              alignSelf: { xs: 'none', md: 'flex-end' },
             }}
           >
             <StyledTypography
               type={'paragraph'}
               text={'Email: mukomela.oleg@gmail.com'}
-              sx={{ fontSize: '30px', color: 'white' }}
+              sx={{ color: 'white' }}
             />
-            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: { xs: 'left', md: 'space-between' },
+                gap: { xs: '30px', md: 'none' },
+              }}
+            >
               <StyledTypography
                 type={'paragraph'}
                 text={'+380678672400'}
-                sx={{ fontSize: '24px', color: 'white' }}
+                sx={{ fontSize: '16px', color: 'white' }}
               />
               <StyledTypography
                 type={'paragraph'}
                 text={'+380973402568'}
-                sx={{ fontSize: '24px', color: 'white' }}
+                sx={{ fontSize: '16px', color: 'white' }}
               />
             </Box>
             <StyledTypography
               type={'paragraph'}
               text={'вул. Трудова 29, Хмельницький'}
-              sx={{ fontSize: '30px', color: 'white' }}
+              sx={{ color: 'white' }}
             />
           </Box>
         </Box>

@@ -1,4 +1,4 @@
 export * from './SliderContainer';
-export * from './SliderItem';
+export * from './StyledSwiperSlideItem';
 export * from './SliderNavigation';
 export * from './SliderProgress';
